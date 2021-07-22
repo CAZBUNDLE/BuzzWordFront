@@ -39,8 +39,8 @@ let inRoom = -1
 
 async function getState() {
 
-    
-    state = ahttps://buzz-word-project.herokuapp.com/api/state`)
+    state = await submit('GET', `https://buzz-word-project.herokuapp.com/api/state`)
+   
 
     if (state){
 
