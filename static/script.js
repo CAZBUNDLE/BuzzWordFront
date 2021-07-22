@@ -40,7 +40,7 @@ let inRoom = -1
 async function getState() {
 
     
-    state = await submit('GET', `https://buzz-word-project.herokuapp.com/`)
+    state = ahttps://buzz-word-project.herokuapp.com/api/state`)
 
     if (state){
 
@@ -169,7 +169,7 @@ function joinGame(room) {
     }
 
     console.log(roomInfo)
-    submit('POST', `https://buzz-word-project.herokuapp.com/`, roomInfo)
+    submit('POST', `https://buzz-word-project.herokuapp.com/api/room`, roomInfo)
 
     inRoom = room.roomId
 
@@ -183,7 +183,7 @@ async function signUp() {
     let user = document.getElementById('userName')
     let password = document.getElementById('password')
     let userinfo = { username: user.value, password: password.value }
-    let result = await submit('POST', `https://buzz-word-project.herokuapp.com/`, userinfo)
+    let result = awhttps://buzz-word-project.herokuapp.com/signup/`, userinfo)
     console.log(result)
 }
 
@@ -191,7 +191,7 @@ async function signIn() {
     let user = document.getElementById('si_userName')
     let password = document.getElementById('si_password')
     let userinfo = { username: user.value, password: password.value }
-    let result = await submit('POST', `https://buzz-word-project.herokuapp.com/`, userinfo)
+    let result = awhttps://buzz-word-project.herokuapp.com/login/`, userinfo)
     console.log(result)
 }
 
@@ -240,7 +240,7 @@ function clearCells() {
 }
 
 async function submitWord() {
-    let response = await submit('POST', 'https://buzz-word-project.herokuapp.com/', { "letters": letters })
+    let response = awhttps://buzz-word-project.herokuapp.com/api/dict', { "letters": letters })
     console.log(response)
     const history = document.getElementById("historyHolder")
     let historyEntry = document.createElement("p")
@@ -284,7 +284,7 @@ async function submitWord() {
 
 async function submit(method, url, requestBodyObj) {
 
-    // const response = await fetch("http://localhost:3000/login", {
+    // const resphttps://buzz-word-project.herokuapp.com/login", {
     //     method: "POST",
     //     credentials: "same-origin",
     //     body: JSON.stringify({ username: body[0], password: body[1] }),
