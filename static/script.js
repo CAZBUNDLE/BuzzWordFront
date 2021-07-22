@@ -183,7 +183,7 @@ async function signUp() {
     let user = document.getElementById('userName')
     let password = document.getElementById('password')
     let userinfo = { username: user.value, password: password.value }
-    let result = awhttps://buzz-word-project.herokuapp.com/signup/`, userinfo)
+    let result = await submit('POST,'`https://buzz-word-project.herokuapp.com/signup/`, userinfo)
     console.log(result)
 }
 
@@ -191,7 +191,7 @@ async function signIn() {
     let user = document.getElementById('si_userName')
     let password = document.getElementById('si_password')
     let userinfo = { username: user.value, password: password.value }
-    let result = awhttps://buzz-word-project.herokuapp.com/login/`, userinfo)
+    let result = await submit('POST,'`https://buzz-word-project.herokuapp.com/login/`, userinfo)
     console.log(result)
 }
 
@@ -240,7 +240,7 @@ function clearCells() {
 }
 
 async function submitWord() {
-    let response = awhttps://buzz-word-project.herokuapp.com/api/dict', { "letters": letters })
+    let response = await submit('POST,'`https://buzz-word-project.herokuapp.com/api/dict`, { "letters": letters })
     console.log(response)
     const history = document.getElementById("historyHolder")
     let historyEntry = document.createElement("p")
